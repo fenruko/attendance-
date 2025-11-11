@@ -399,10 +399,10 @@ class AttendanceClient:
         self.main_action_button.pack(side=tk.LEFT, padx=5)
         
         # Break and Return buttons
-        self.break_button = ttk.Button(self.action_frame, text="Start Break", command=self.start_break, state="disabled")
+        self.break_button = ttk.Button(self.action_frame, text="Start Break", command=lambda: self.start_break(self.code_entry.get().strip()), state="disabled")
         self.break_button.pack(side=tk.LEFT, padx=5)
         
-        self.return_button = ttk.Button(self.action_frame, text="End Break", command=self.end_break, state="disabled")
+        self.return_button = ttk.Button(self.action_frame, text="End Break", command=lambda: self.end_break(self.code_entry.get().strip()), state="disabled")
         self.return_button.pack(side=tk.LEFT, padx=5)
         
         # Leave request button
